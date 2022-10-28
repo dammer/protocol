@@ -1,0 +1,9 @@
+name: protocol
+version: 0.1.0
+
+authors:
+  - Damir Sharipov <dammer2k@gmail.com>
+
+crystal: 1.6.1
+
+license: MIT
