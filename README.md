@@ -1,6 +1,6 @@
-# protocol
+# devtools protocol version 1.3 for Crystal
 
-TODO: Write a description here
+Converted from official ChromeDevTools repo [json](https://github.com/ChromeDevTools/devtools-protocol/tree/master/json) files
 
 ## Installation
 
@@ -9,7 +9,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      protocol:
-       github: your-github-user/protocol
+       github: dammer/protocol
    ```
 
 2. Run `shards install`
@@ -20,11 +20,24 @@ TODO: Write a description here
 require "protocol"
 ```
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+```crystal
+def process_message(raw : String)
+  m = NamedTuple(id: UInt64?, method: String?).from_json(raw)
+  if cmd_id = m[:id]
+    emit CommandEvent, cmd_id, raw
+  else
+    event = map_events(m) # Protocol::EVENTS_MAP[name]
+    {% begin %}
+      case event
+      {% for _, event in Protocol::EVENTS_MAP %}
+        when {{ event }}.class
+          emit {{event}}, Protocol::{{event}}.from_json(raw, root: "params")
+      {% end %}
+      end
+    {% end %}
+   end
+end
+```
 
 ## Contributing
 
