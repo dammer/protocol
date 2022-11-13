@@ -416,9 +416,7 @@ module Protocol
       PrefixedRequestAnimationFrame                             # PrefixedRequestAnimationFrame
       PrefixedStorageInfo                                       # PrefixedStorageInfo
       PrefixedVideoDisplayingFullscreen                         # PrefixedVideoDisplayingFullscreen
-      PrefixedVideoEnterFullscreen                              # PrefixedVideoEnterFullscreen
       PrefixedVideoEnterFullScreen                              # PrefixedVideoEnterFullScreen
-      PrefixedVideoExitFullscreen                               # PrefixedVideoExitFullscreen
       PrefixedVideoExitFullScreen                               # PrefixedVideoExitFullScreen
       PrefixedVideoSupportsFullscreen                           # PrefixedVideoSupportsFullscreen
       RangeExpand                                               # RangeExpand
@@ -434,6 +432,10 @@ module Protocol
       XHRJSONEncodingDetection                                  # XHRJSONEncodingDetection
       XMLHttpRequestSynchronousInNonWorkerOutsideBeforeUnload   # XMLHttpRequestSynchronousInNonWorkerOutsideBeforeUnload
       XRSupportsSession                                         # XRSupportsSession
+
+      # Error: duplicate when "prefixedvideoenterfullscreen" in case
+      # PrefixedVideoEnterFullscreen                              # PrefixedVideoEnterFullscreen
+      # PrefixedVideoExitFullscreen                               # PrefixedVideoExitFullscreen
     end
 
     # This issue tracks information needed to print a deprecation message.
