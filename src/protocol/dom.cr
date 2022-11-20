@@ -199,7 +199,7 @@ module Protocol
     end
 
     # An array of quad vertices, x immediately followed by y for each point, points clock-wise.
-    alias Quad = Array(Number::Primitive)
+    alias Quad = Array(Float64)
 
     # Box model.
     struct BoxModel
