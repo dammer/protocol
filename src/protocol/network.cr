@@ -75,9 +75,11 @@ module Protocol
     alias MonotonicTime = Number::Primitive
 
     # Request / response headers as keys / values of JSON object.
-    struct Headers
-      include JSON::Serializable
-    end
+
+    alias Headers = Hash(String, String)
+    # struct Headers
+    #   include JSON::Serializable
+    # end
 
     # The underlying connection technology that the browser is supposedly using.
     enum ConnectionType
