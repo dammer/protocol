@@ -309,7 +309,7 @@ module Protocol
       getter server_signature_algorithm : Int::Primitive?
       @[JSON::Field(key: "encryptedClientHello")]
       # Whether the connection used Encrypted ClientHello
-      getter encrypted_client_hello : Bool
+      getter encrypted_client_hello : Bool?
     end
 
     # Whether the request complied with Certificate Transparency policy.
@@ -583,7 +583,8 @@ module Protocol
       # Cookie path.
       getter path : String
       # Cookie expiration date as the number of seconds since the UNIX epoch.
-      getter expires : Number::Primitive
+      @[JSON::Field(converter: Time::EpochConverter)]
+      getter expires : Time
       # Cookie size.
       getter size : Int::Primitive
       @[JSON::Field(key: "httpOnly")]
