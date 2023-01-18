@@ -1,5 +1,6 @@
 require "json"
 require "./dash_enum"
+require "./float_epoch_converter"
 require "./protocol/*"
 
 module Protocol

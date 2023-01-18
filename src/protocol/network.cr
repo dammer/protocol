@@ -583,7 +583,7 @@ module Protocol
       # Cookie path.
       getter path : String
       # Cookie expiration date as the number of seconds since the UNIX epoch.
-      @[JSON::Field(converter: Time::EpochConverter)]
+      @[JSON::Field(converter: Time::FloatEpochConverter)]
       getter expires : Time
       # Cookie size.
       getter size : Int::Primitive
