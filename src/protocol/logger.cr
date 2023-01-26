@@ -2,7 +2,7 @@
 # Provides access to log entries.
 # ===============================
 
-# Log module dependencies
+# Logger module dependencies
 require "./runtime"
 require "./network"
 
@@ -12,17 +12,17 @@ require "./command"
 require "./event"
 
 module Protocol
-  module Log
+  module Logger
     # ----------------------------------------
-    # Log Section: types
+    # Logger Section: types
     # ----------------------------------------
 
-    # Log entry.
+    # Logger entry.
     struct LogEntry
       include JSON::Serializable
-      # Log entry source.
+      # Logger entry source.
       getter source : String
-      # Log entry severity.
+      # Logger entry severity.
       getter level : String
       # Logged text.
       getter text : String
@@ -57,7 +57,7 @@ module Protocol
     end
 
     # ----------------------------------------
-    # Log Section: commands
+    # Logger Section: commands
     # ----------------------------------------
 
     # Clears the log.
@@ -92,7 +92,7 @@ module Protocol
     end
 
     # ----------------------------------------
-    # Log Section: events
+    # Logger Section: events
     # ----------------------------------------
 
     # Issued when new message was logged.
